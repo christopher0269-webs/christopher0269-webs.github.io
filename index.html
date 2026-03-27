@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es-ve">
+<head>
+    <link rel="icon"  href="favicon.png" type="image/png"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=375x667, initial-scale=1.0">
+    <title>ipuv ciudad plaza</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<script>
+document.addEventListener('keydown', function(event) {
+    const video = document.getElementById('miVideo');
+
+    // 1. Verificación de seguridad: Si el video no existe, no hagas nada.
+    if (!video) return;
+
+    // Convertimos la tecla a minúscula una sola vez para ahorrar recursos
+    const key = event.key.toLowerCase();
+
+    // 'k' para Play/Pausa
+    if (key === 'k') {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    }
+
+    // 'm' para Mutear/Desmutear
+    if (key === 'm') {
+        video.muted = !video.muted;
+    }
+
+    // 'Ctrl + Q' para Pantalla Completa
+    // IMPORTANTE: Algunos navegadores bloquean 'Ctrl + Q' porque es un atajo del sistema.
+    if (event.ctrlKey && key === 'q') {
+        event.preventDefault(); 
+        
+        if (!document.fullscreenElement) {
+            // Usamos el contenedor del video si quieres que los controles se vean en grande
+            video.requestFullscreen().catch(err => {
+                console.error(`Error: ${err.message}`);
+            });
+        } else {
+            document.exitFullscreen();
+        }
+    }
+});
+</script>
+    <div class="boton-menu" id="btnHamburguesa" onclick="toggleMenu()">
+        <div class="linea"></div>
+        <div class="linea"></div>
+        <div class="linea"></div>
+    </div>
+
+    <nav class="menu-lateral" id="miMenu">
+        <a href="index2.html">fotos y videos</a>
+        <a href="index3.html">programacion</a>
+        <a href="index4.html">eventos</a>
+        <a href="https://www.google.com/maps/place/IPUV+Ciudad+Plaza/@10.1252242,-67.9743519,18z/data=!4m6!3m5!1s0x8e80670054fc7f99:0xc6c49601ed746cf5!8m2!3d10.1250993!4d-67.9743711!16s%2Fg%2F11yfkjdxhp?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D">ubicacion(google maps)</a>
+    </nav>
+    <a href="index.html" id="boton-a" onclick="alert('hola...')">
+    <i class="fab fa-html5"></i> h1
+</a>
+    <center><h1 style="color:darkblue">Ipuv Ciudad Plaza</h1></center>
+    <center><h4 style="color:blue">en Dios haremos proezas</p></center>
+    
+    
+<div id="footer">
+<center><h3 id="para1">&copychristopher0269pages</h3></center>
+</div>
+<script>function toggleMenu() {
+            // Activa/desactiva el menú
+            document.getElementById("miMenu").classList.toggle("activo");
+            // Activa/desactiva la animación de las rayas
+            document.getElementById("btnHamburguesa").classList.toggle("abierto");
+        }</script>
+</body>
+</html>
