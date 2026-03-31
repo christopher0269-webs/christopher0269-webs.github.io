@@ -78,6 +78,12 @@ document.addEventListener('keydown', function(event) {
             // Activa/desactiva la animación de las rayas
             document.getElementById("btnHamburguesa").classList.toggle("abierto");
         }</script>
+    <div class="contenedor-idioma">
+  <select id="selector-idioma" onchange="cambiarIdioma(this.value)">
+    <option value="es">Español 🇪🇸</option>
+    <option value="en">English 🇺🇸</option>
+  </select>
+</div>
     <script>
     function cambiarIdioma(lang) {
     // Definimos las rutas exactas de tu GitHub Pages
