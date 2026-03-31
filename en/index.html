@@ -78,9 +78,31 @@ document.addEventListener('keydown', function(event) {
             // Activa/desactiva la animación de las rayas
             document.getElementById("btnHamburguesa").classList.toggle("abierto");
         }</script>
-    <footer>
-  <a href="christopher0269-webs.github.io/es/">Espanish 🇪🇸</a> | 
-  <a href="christopher0269-webs.github.io/en/">English 🇺🇸</a>
-</footer>
+    <div class="contenedor-idioma">
+  <select id="selector-idioma" onchange="cambiarIdioma(this.value)">
+    <option value="es">Español 🇪🇸</option>
+    <option value="en">English 🇺🇸</option>
+  </select>
+</div>
+    <script><script>
+  // Esta función hace el salto de carpeta
+  function cambiarIdioma(lang) {
+      if (lang === "en") {
+          window.location.href = "/en/index.html";
+      } else {
+          window.location.href = "/es/index.html";
+      }
+  }
+
+  // Esto es para que el selector muestre el idioma correcto al cargar
+  window.onload = function() {
+      const selector = document.getElementById('selector-idioma');
+      if (window.location.pathname.includes('/en/')) {
+          selector.value = "en";
+      } else {
+          selector.value = "es";
+      }
+  };
+</script></script>
 </body>
 </html>
