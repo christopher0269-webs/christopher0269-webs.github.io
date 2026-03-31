@@ -115,3 +115,20 @@ border-radius: 100px; /* Ajusta el número para más o menos redondeado */
     right: 215px;       /* Distancia desde la derecha (opcional) */
     z-index: 1000;     /* Para que siempre esté por encima de todo */
 }
+.contenedor-idioma {
+    position: fixed;
+    bottom: 20px;   /* Separado un poquito del borde para que respire */
+    right: 20px;    /* Lo ponemos a la derecha, estilo "botón flotante" */
+    z-index: 9999;
+}
+
+#selector-idioma {
+    padding: 10px 15px;
+    border-radius: 25px; /* Bordes redondeados para que sea moderno */
+    border: 1px solid #ccc;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2); /* Sombra para que resalte */
+    font-size: 16px; /* Tamaño ideal para que no se haga zoom en iPhone */
+    cursor: pointer;
+    outline: none;
+}
