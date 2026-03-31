@@ -1,0 +1,117 @@
+#para1 {
+        text-align: center;
+        color: red;
+    }
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #ffffff;
+            padding-bottom: 70px; /* Para evitar que el contenido quede oculto detrás del botón */
+        }
+
+        /* --- CONTENEDOR DEL BOTÓN --- */
+        .boton-menu {
+            position: fixed;
+            overflow: visible;
+            top: 20px;
+            right: 20px;
+            width: 35px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 9999; /* Para que siempre esté arriba */
+        }
+
+        /* --- DISEÑO DE LAS RAYAS --- */
+        .linea {
+            overflow: visible;
+            width: 100%;
+            height: 5px;
+            background-color: #333;
+            border-radius: 5px;
+            transition: 0.4s; /* Velocidad de la animación */
+        }
+
+        /* --- ANIMACIÓN A "X" --- */
+        .abierto .linea:nth-child(1) {
+            transform: translateY(12px) rotate(45deg);
+            background-color: white;
+        }
+
+        .abierto .linea:nth-child(2) {
+            opacity: 0; /* Desaparece la raya del medio */
+        }
+
+        .abierto .linea:nth-child(3) {
+            transform: translateY(-13px) rotate(-45deg);
+            background-color: white;
+        }
+
+        /* --- EL MENÚ LATERAL --- */
+        .menu-lateral {
+            position: fixed;   /* O absolute, pero fixed es mejor para menús */
+            z-index: 8000;
+            overflow: visible;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100%;
+            background-color: #222;
+            transition: 0.4s;
+            padding-top: 80px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-lateral.activo {
+            right: 0;
+            overflow: visible;
+        }
+
+        .menu-lateral a {
+            overflow: visible;
+            padding: 15px 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        .menu-lateral a:hover {
+            overflow: visible;
+            background-color: #444;
+        }
+#footer{
+background: darkblue;
+border: 10px solid darkblue; 
+border-radius: 100px; /* Ajusta el número para más o menos redondeado */
+    overflow: hidden;    /* ¡IMPORTANTE! Corta el video para que siga la forma del borde */
+    position: fixed;   /* Lo fija en la pantalla */
+    bottom: 20px;      /* Distancia desde abajo */
+    right: 20px;       /* Distancia desde la derecha (opcional) */
+    z-index: 1000;     /* Para que siempre esté por encima de todo */
+}
+#containerconborder{
+    border-radius: 100px; /* Ajusta el número para más o menos redondeado */
+    border: 1px solid darkblue; /* Opcional: para que el borde se note más */
+}
+.container {
+    overflow: hidden;    /* ¡IMPORTANTE! Corta el video para que siga la forma del borde */
+    border: 10px solid rgb(255, 0, 0); 
+    border-radius: 40px;
+    z-index: 0;
+    opacity: 0.99; /* Visualmente es igual a 1, pero obliga al navegador a recalcular las capas */
+}
+#boton-a {
+    border:10px solid red;
+    border-radius: 40px;
+    padding: 0.6px 30px;
+    background-color: red;
+    position: fixed;   /* Lo fija en la pantalla */
+    bottom: 20px;      /* Distancia desde abajo */
+    right: 215px;       /* Distancia desde la derecha (opcional) */
+    z-index: 1000;     /* Para que siempre esté por encima de todo */
+}
