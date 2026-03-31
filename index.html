@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // Detectamos el idioma del navegador
+        const userLang = navigator.language || navigator.userLanguage;
+        const shortLang = userLang.substring(0, 2); // "es" o "en"
+
+        // Redirigimos a la carpeta correspondiente
+        if (shortLang === "en") {
+            window.location.href = "./en/";
+        } else {
+            // Por defecto español (incluye "es" y cualquier otro idioma)
+            window.location.href = "./es/";
+        }
+    </script>
+</head>
+<body>
+    <p>Redirigiendo... / Redirecting...</p>
+</body>
+</html>
