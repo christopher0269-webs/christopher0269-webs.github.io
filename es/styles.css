@@ -131,4 +131,5 @@ border-radius: 100px; /* Ajusta el número para más o menos redondeado */
     font-size: 16px; /* Tamaño ideal para que no se haga zoom en iPhone */
     cursor: pointer;
     outline: none;
+        right: 400px; 
 }
