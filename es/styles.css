@@ -1,3 +1,4 @@
+/* --- ESTILOS GENERALES --- */
 #para1 {
     text-align: center;
     color: red;
@@ -8,10 +9,10 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #ffffff;
-    padding-bottom: 100px; /* Aumentado para dar más espacio abajo */
+    padding-bottom: 80px; /* Espacio para que los botones no tapen el texto */
 }
 
-/* --- CONTENEDOR DEL BOTÓN HAMBURGUESA --- */
+/* --- MENÚ HAMBURGUESA (LAS TRES RAYAS) --- */
 .boton-menu {
     position: fixed;
     top: 20px;
@@ -33,7 +34,7 @@ body {
     transition: 0.4s;
 }
 
-/* Animación a X */
+/* Animación a "X" cuando el menú está abierto */
 .abierto .linea:nth-child(1) {
     transform: translateY(12px) rotate(45deg);
     background-color: white;
@@ -53,7 +54,7 @@ body {
     position: fixed;
     z-index: 8000;
     top: 0;
-    right: -280px;
+    right: -280px; /* Escondido a la derecha */
     width: 280px;
     height: 100%;
     background-color: #222;
@@ -64,7 +65,7 @@ body {
 }
 
 .menu-lateral.activo {
-    right: 0;
+    right: 0; /* Se desliza hacia adentro */
 }
 
 .menu-lateral a {
@@ -75,35 +76,46 @@ body {
     border-bottom: 1px solid #333;
 }
 
-/* --- ELEMENTOS FLOTANTES (FOOTER Y BOTONES) --- */
+.menu-lateral a:hover {
+    background-color: #444;
+}
+
+/* --- BARRA FLOTANTE INFERIOR (CONTROLES) --- */
+
+/* 1. El Footer (Extrema Derecha) */
 #footer {
     background: darkblue;
-    border: 5px solid darkblue; /* Reducido un poco para ahorrar espacio */
+    border: 5px solid darkblue; 
     border-radius: 50px; 
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 1000;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
+/* 2. Botón-A (En el medio) */
 #boton-a {
     border: 5px solid red;
     border-radius: 40px;
-    padding: 10px 20px;
+    padding: 8px 20px;
     background-color: red;
     color: white;
     text-decoration: none;
+    font-weight: bold;
     position: fixed;
     bottom: 20px;
-    right: 150px; /* Ajustado para que no choque tanto */
+    right: 110px; /* Ajustado para que no choque con el footer */
     z-index: 1000;
 }
 
+/* 3. Selector de Idioma (Izquierda de los botones) */
 .contenedor-idioma {
     position: fixed;
     bottom: 20px;
-    right: 300px; /* Ajustado */
+    right: 240px; /* Ajustado para estar al lado del Botón-A */
     z-index: 1000;
 }
 
@@ -112,46 +124,30 @@ body {
     border-radius: 25px;
     border: 1px solid #ccc;
     background-color: white;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
     font-size: 16px;
+    cursor: pointer;
     outline: none;
 }
 
-/* =======================================================
-   ESTA ES LA PARTE QUE ARREGLA EL MÓVIL (Media Query)
-   ======================================================= */
+/* --- OPTIMIZACIÓN PARA MÓVILES (iPhone 6 / Tecno) --- */
 @media (max-width: 600px) {
-    /* En el iPhone 6 o Tecno, los botones fijos suelen estorbar.
-       Vamos a hacer que se vean mejor. */
-    
-    .contenedor-idioma, #boton-a, #footer {
-        position: static; /* Dejan de estar pegados abajo */
-        display: block;
-        width: 90%;
-        margin: 10px auto;
-        text-align: center;
-    }
-
-    body {
-        padding-bottom: 20px; /* Ya no hace falta el espacio gigante abajo */
-    }
-
     #boton-a {
-        right: auto;
-        bottom: auto;
+        right: 100px;
+        padding: 8px 12px;
+        font-size: 14px;
     }
 
     .contenedor-idioma {
-        right: auto;
-        bottom: auto;
+        right: 210px;
     }
 
-    #footer {
-        right: auto;
-        bottom: auto;
+    #selector-idioma {
+        font-size: 14px;
+        padding: 8px;
     }
 
     .menu-lateral {
-        width: 100%; /* El menú ocupa toda la pantalla en el móvil */
-        right: -100%;
+        width: 80%; /* Para que no tape toda la pantalla en el móvil */
     }
 }
