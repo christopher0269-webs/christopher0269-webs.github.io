@@ -118,8 +118,8 @@ border-radius: 100px; /* Ajusta el número para más o menos redondeado */
 .contenedor-idioma {
     position: fixed;
     bottom: 20px;   /* Separado un poquito del borde para que respire */
-    right: 20px;    /* Lo ponemos a la derecha, estilo "botón flotante" */
-    z-index: 9999;
+    right: 400px;    /* Lo ponemos a la derecha, estilo "botón flotante" */
+    z-index: 1000;
 }
 
 #selector-idioma {
@@ -131,5 +131,5 @@ border-radius: 100px; /* Ajusta el número para más o menos redondeado */
     font-size: 16px; /* Tamaño ideal para que no se haga zoom en iPhone */
     cursor: pointer;
     outline: none;
-        right: 400px; 
+        
 }
